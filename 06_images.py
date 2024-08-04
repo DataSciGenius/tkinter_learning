@@ -1,4 +1,4 @@
-# Link 1: https://youtu.be/NoTM8JciWaQ?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
+# Link: https://youtu.be/NoTM8JciWaQ?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
 
 # region Using Icons, Images, and Exit Buttons
 
@@ -14,9 +14,9 @@ root.title("Simple Calculator")
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 
 # Loading an image from a file and creating an ImageTk object
-my_img = ImageTk.PhotoImage(Image.open('world.jpg'))
+my_img = ImageTk.PhotoImage(Image.open('images/world.jpg'))
 # Creating a Label widget to display the image
-my_label = Label(image=my_img)
+my_label = Label(image=my_img, width=1000, height=800)
 # Displaying the Label widget on the screen
 my_label.pack()
 

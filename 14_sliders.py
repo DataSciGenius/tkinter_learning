@@ -44,8 +44,4 @@ my_button = Button(root, text='Click me!', command=slide).pack()
 # Running the main event loop
 root.mainloop()
 
-
-# Running the main event loop
-root.mainloop()
-
 # endregion

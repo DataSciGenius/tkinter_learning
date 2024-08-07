@@ -9,7 +9,7 @@ from PIL import ImageTk, Image
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("Simple Calculator")
+root.title("Using Icons, Images, and Exit Buttons")
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 

@@ -9,7 +9,7 @@ from tkinter import *
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("Simple Calculator")
+root.title("Building A Simple Calculator App")
 
 # Creating an Entry widget for the calculator display with specified width and border width
 entry = Entry(root, width=35, borderwidth=5)

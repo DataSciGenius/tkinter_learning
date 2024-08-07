@@ -9,7 +9,7 @@ from PIL import ImageTk, Image
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("Image Viewer")
+root.title("Build an Image Viewer App With Python and TKinter")
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 

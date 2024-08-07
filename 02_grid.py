@@ -7,6 +7,7 @@ from tkinter import *
 
 # Creating the main window (root widget)
 root = Tk()
+root.title("Positioning With Tkinter's Grid System")
 
 # Creating Label widgets with various texts
 mylabel1 = Label(root, text='Hello World!')

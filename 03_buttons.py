@@ -7,6 +7,7 @@ from tkinter import *
 
 # Creating the main window (root widget)
 root = Tk()
+root.title("Creating Buttons With TKinter")
 
 # Defining the function that will be executed when the button is clicked
 def myclick():

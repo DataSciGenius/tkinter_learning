@@ -10,7 +10,7 @@ from tkinter import messagebox
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("Image Viewer")
+root.title("Message Boxes with TKinter")
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 

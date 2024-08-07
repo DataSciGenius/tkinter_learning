@@ -7,6 +7,7 @@ from tkinter import Tk, Label
 
 # Creating the main window (root widget)
 root = Tk()
+root.title("Create Graphical User Interfaces With Python And TKinter")
 
 # Creating a Label widget with the text 'Hello World!'
 mylabel = Label(root, text='Hello World!')

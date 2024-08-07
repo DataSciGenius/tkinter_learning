@@ -7,6 +7,7 @@ from tkinter import *
 
 # Creating the main window (root widget)
 root = Tk()
+root.title("reating Input Fields With TKinter")
 
 # Creating an Entry widget with a specified width, background color, foreground color, and border width
 entry = Entry(root, width=50, bg='black', fg='white', borderwidth=5)

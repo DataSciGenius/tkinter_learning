@@ -9,7 +9,7 @@ from PIL import ImageTk, Image
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("My First Window")
+root.title("Create New Window in TKinter")
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 
@@ -18,7 +18,7 @@ def open():
     global my_image
     # Creating a new top-level window
     top = Toplevel()
-    top.title("My Second Window")
+    top.title("Create Another Window in TKinter")
     # Setting the window icon for the second window (ensure the path to the icon is correct)
     top.iconbitmap(r'C:\Users\musta\tkinter_project')
     # Loading an image from a file and creating an ImageTk object

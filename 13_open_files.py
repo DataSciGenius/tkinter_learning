@@ -11,7 +11,7 @@ from tkinter import filedialog
 
 # Creating the main window (root widget)
 root = Tk()
-root.title("My First Window")
+root.title("Open Files Dialog Box")
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 

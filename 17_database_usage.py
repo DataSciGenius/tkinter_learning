@@ -1,7 +1,8 @@
 # Link 1: https://youtu.be/YR3h2CY21-U?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
 # Link 2: https://youtu.be/AK1J8xF4fuk?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
+# Link 3: https://youtu.be/c9_gcIeAru0?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
 
-# region Using Databases With TKinter, Building Out The GUI for our Database App
+# region Using Databases With TKinter, Building Out The GUI for our Database App, Delete A Record From Our Database
 
 # Importing the Tkinter library for creating GUI applications
 from tkinter import *
@@ -16,7 +17,22 @@ root.title("Using Databases With TKinter")  # Setting the title of the window
 # Setting the window icon (ensure the path to the icon is correct)
 root.iconbitmap(r'C:\Users\musta\tkinter_project')
 # Setting the initial size of the window
-root.geometry('400x400')
+root.geometry('400x500')
+
+# create a function to delete a record
+def delete():
+    # Connecting to the SQLite database (or creating it if it doesn't exist)
+    connection = sqlite3.connect('address_book.db')
+    # Creating a cursor object to execute SQL commands
+    cursor = connection.cursor()
+
+    cursor.execute('DELETE FROM addresses WHERE oid=' + delete_box.get())
+
+    # Committing the changes to the database
+    connection.commit()
+    # Closing the connection to the database
+    connection.close()
+
 
 # Create submit function for database
 def submit():
@@ -64,11 +80,11 @@ def query():
     # Prepare the data for display
     print_records = ''
     for record in records:
-        print_records += f'{record[0]}, {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]} \n'
+        print_records += f'{record[0]}, {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]}, \t {record[6]} \n'
 
     # Create a label widget to display the records
     query_label = Label(root, text=print_records)
-    query_label.grid(row=8, column=0, columnspan=2)
+    query_label.grid(row=11, column=0, columnspan=2)
 
     # Committing the changes to the database
     connection.commit()
@@ -77,7 +93,7 @@ def query():
 
 # Create text boxes for user input
 f_name = Entry(root, width=30)
-f_name.grid(row=0, column=1, padx=20)  # Positioning the text box
+f_name.grid(row=0, column=1, padx=20, pady=(10, 0))  # Positioning the text box
 
 l_name = Entry(root, width=30)
 l_name.grid(row=1, column=1)
@@ -94,9 +110,12 @@ state.grid(row=4, column=1)
 zipcode = Entry(root, width=30)
 zipcode.grid(row=5, column=1)
 
+delete_box =  Entry(root, width=30)
+delete_box.grid(row=9, column=1, pady=5)
+
 # Create labels for each text box to indicate what information should be entered
 f_name_label = Label(root, text='First Name')
-f_name_label.grid(row=0, column=0)
+f_name_label.grid(row=0, column=0, pady=(10, 0))
 
 l_name_label = Label(root, text='Last Name')
 l_name_label.grid(row=1, column=0)
@@ -113,13 +132,21 @@ state_label.grid(row=4, column=0)
 zipcode_label = Label(root, text='Zipcode')
 zipcode_label.grid(row=5, column=0)
 
+delete_box_label = Label(root, text='Delete ID')
+delete_box_label.grid(row=9, column=0, pady=5)
+
 # Create a button to submit the entered data to the database
 submit_button = Button(root, text='Add record to database', command=submit)
 submit_button.grid(row=6, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
 # Create a button to query and display records from the database
 query_button = Button(root, text='Show records', command=query)
-query_button.grid(row=7, column=0, columnspan=2, pady=10, padx=10, ipadx=128)
+query_button.grid(row=7, column=0, columnspan=2, pady=10, padx=10, ipadx=126)
+
+# create a delete button
+delete_button = Button(root, text='Delete record', command=delete)
+delete_button.grid(row=10, column=0, columnspan=2, pady=10, padx=10, ipadx=126)
+
 
 # Running the main event loop to keep the application window open
 root.mainloop()

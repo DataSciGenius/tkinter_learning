@@ -6,8 +6,11 @@
 from tkinter import Tk, Label
 
 # Creating the main window (root widget)
-root = Tk()
-root.title("Create Graphical User Interfaces With Python And TKinter")
+root = Tk()  # Initialize the main application window
+# Setting the title of the window
+root.title("Hello World!")
+# Setting the initial size of the window
+root.geometry('300x200')  # Width x Height in pixels
 
 # Creating a Label widget with the text 'Hello World!'
 mylabel = Label(root, text='Hello World!')
